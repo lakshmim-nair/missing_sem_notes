@@ -1,0 +1,117 @@
+## Shell notes
+
+
+Why shell?
+interact with the computer in the most primary way
+
+`date: `print date
+
+`echo:` prints everything back/ echos back
+`environment variables:`
+`path variables:` for specifying the paths everything starts with a forward slash windows the root directory exists
+
+`absolute paths`
+
+`relative paths`
+
+`pwd` print working directory
+
+`cd` change directory
+
+`cd.` current directory
+
+`cd..` parent directory
+
+`../../../../../` to move forward this many steps
+
+`ls` list the files in current directory
+
+`.`is the current directory
+`cd ./home` go to come directory in the current directory
+
+`why and where to use the absolute path?`
+
+shell scripting and writing the programs that want to run in any computer. If given relative path it will run in mine but not yours.
+by defalut everything runs in the current directory.
+
+`cd ~` for home directory
+
+`cd -`  go to the director you were previously in. for toggling between in the 2 directory
+
+`ls --help` give info about the command ls
+
+options and file the options you can pass in and the files you can pass in
+
+`ls -l`- long list format
+
+`d` at the begining indicate the directory not `d` then is a file.
+
+second and third group - person who owns the file/directory
+and the permissions for the person or the group. final group of three for everyone else who is not a group member or owner
+
+example:
+
+`drwx` - means a directory, can read write and execute first three for the owner, next three for the group.
+
+`rwx` means differently for files and director
+ for file - read - read contents, w - save the file, x - execute the xbit
+ for directory - read - are you allowed to see the contents or list the contents
+                  write - are you allowed to rename/ create files in the directory
+                  execute - search the directory/ are you allowed to enter into the directory
+                  tocd into that then you should have x permission on that directory and all the parent directory as well.
+
+if you have a dash (`-`) that means you dont have that permission \
+
+`mv` move the file to a different directory or to rename takes 2 paths as inputs
+
+`cp` it lets you copy a file  takes 2 paths as argument
+
+`rm` - remove a file
+`rmdir` - remove all the contents inside a directory
+`mkdir` - make directory and "My Photos" should be in quotes or no space
+`man` - manual pages takes argument as another program and then shows the manual pages for the argument program
+eg: man ls
+
+ `how to interact with files??`
+
+every program by default has an input stream and output stream
+ a keyboard and terminal is ip and the default the terminal is the default output
+ where it gets printed into  it.
+
+ shell gives a way to rewire the streams
+
+ using angle brackets `<>` from `<file1>` `<file2>` first set shows where to take the input from second set of angle bracket shows where the output should be printed to.
+ eg: `echo.hello > hello.txt`
+`cat` - prints the contents of a file
+cat also allows to play with wiring
+
+`cat < hello.txt` prints hello
+
+`>>` append and not overwrite
+
+
+'|' pipe character  - take the output of the program to the left and make it the output to the program to the right
+
+`tail` - print the last n lines of an output
+
+`ls -l` the long list command
+
+eg: if i want the last line of the ls command
+
+`ls -l / | tail -n1` pipe is what wires them together
+
+`ls -l / | tail -n1 > ls.txt` prints everything to ls.txt file
+
+`curl --head --silent google.com`
+
+`curl` -
+`grep` -
+
+
+`what is the root user?` allows to do what ever they want. mostly you are a user
+
+`sudo` - do as a super user. when you want to run a program and super user
+
+`tee` - takes the input the and writes to a file but also to standard out. convenient way you can see as well.
+
+`open` to open a file in an appropriate app
